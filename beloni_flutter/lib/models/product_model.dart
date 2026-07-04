@@ -12,18 +12,18 @@ class ProductModel {
   final String image;
   final List<String> images;
   final List<String> sizes;
-  final String size;
+  final String? size;
   final List<String> colors;
-  final String color;
+  final String? color;
   final String description;
-  final String category;
-  @JsonKey(name: 'is_bestseller')
+  final String? category;
+  @JsonKey(name: 'is_bestseller', defaultValue: false)
   final bool isBestseller;
-  @JsonKey(name: 'is_featured')
+  @JsonKey(name: 'is_featured', defaultValue: false)
   final bool isFeatured;
-  @JsonKey(name: 'is_sale')
+  @JsonKey(name: 'is_sale', defaultValue: false)
   final bool isSale;
-  @JsonKey(name: 'is_out_of_stock')
+  @JsonKey(name: 'is_out_of_stock', defaultValue: false)
   final bool isOutOfStock;
   @JsonKey(name: 'old_price')
   final double? oldPrice;
@@ -38,15 +38,15 @@ class ProductModel {
     required this.image,
     required this.images,
     required this.sizes,
-    required this.size,
+    this.size,
     required this.colors,
-    required this.color,
+    this.color,
     required this.description,
-    required this.category,
-    required this.isBestseller,
-    required this.isFeatured,
-    required this.isSale,
-    required this.isOutOfStock,
+    this.category,
+    this.isBestseller = false,
+    this.isFeatured = false,
+    this.isSale = false,
+    this.isOutOfStock = false,
     this.oldPrice,
     this.quantity,
     required this.reviews,
