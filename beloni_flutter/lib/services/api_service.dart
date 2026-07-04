@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import '../models/product_model.dart';
+import '../models/banner_model.dart';
 import '../core/theme/app_colors.dart';
 
 class ApiService {
@@ -19,6 +20,19 @@ class ApiService {
       throw Exception('Failed to load products');
     } catch (e) {
       throw Exception('Error fetching products: $e');
+    }
+  }
+
+  Future<List<BannerModel>> getBanners() async {
+    try {
+      final response = await _dio.get('banners.json');
+      if (response.statusCode == 200) {
+        final List<dynamic> bannersJson = response.data['banners'];
+        return bannersJson.map((json) => BannerModel.fromJson(json)).toList();
+      }
+      throw Exception('Failed to load banners');
+    } catch (e) {
+      throw Exception('Error fetching banners: $e');
     }
   }
 }
