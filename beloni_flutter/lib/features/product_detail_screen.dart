@@ -266,7 +266,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText.h6(review.userName),
+                  CustomText.h6(review.name),
                   _buildRating(review.rating.toDouble()),
                 ],
               ),
