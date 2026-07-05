@@ -17,13 +17,13 @@ class ProfileScreen extends ConsumerWidget {
       body: CustomSafeArea(
         child: Column(
           children: [
-            const CustomHeader(
-              title: 'My profile',
-              showBackButton: false,
-            ),
+            const CustomHeader(title: 'My profile', showBackButton: false),
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 28,
+                ),
                 child: Column(
                   children: [
                     _buildUserInfo(context),
@@ -53,7 +53,9 @@ class ProfileScreen extends ConsumerWidget {
                   shape: BoxShape.circle,
                   border: Border.all(color: AppColors.accentColor, width: 6),
                   image: const DecorationImage(
-                    image: NetworkImage('https://george-fx.github.io/beloni/avatar/01.jpg'),
+                    image: NetworkImage(
+                      'https://george-fx.github.io/beloni/avatar/01.jpg',
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -67,15 +69,19 @@ class ProfileScreen extends ConsumerWidget {
                     color: AppColors.white,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.edit, size: 16, color: AppColors.mainColor),
+                  child: const Icon(
+                    Icons.edit,
+                    size: 16,
+                    color: AppColors.mainColor,
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 18),
-          CustomText.h3('Kristin Watson', textAlign: TextAlign.center),
+          CustomText.h3('Manish Kumar', textAlign: TextAlign.center),
           const SizedBox(height: 4),
-          CustomText.t14('kristinwatson@mail.com', textAlign: TextAlign.center),
+          CustomText.t14('manishkumar@mail.com', textAlign: TextAlign.center),
         ],
       ),
     );
@@ -124,7 +130,11 @@ class _ProfileItem extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const _ProfileItem({required this.icon, required this.title, required this.onTap});
+  const _ProfileItem({
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -142,8 +152,14 @@ class _ProfileItem extends StatelessWidget {
             children: [
               Icon(icon, size: 20, color: AppColors.mainColor),
               const SizedBox(width: 16),
-              Expanded(child: CustomText.t16(title, color: AppColors.mainColor)),
-              const Icon(Icons.arrow_forward_ios, size: 14, color: AppColors.mainColor),
+              Expanded(
+                child: CustomText.t16(title, color: AppColors.mainColor),
+              ),
+              const Icon(
+                Icons.arrow_forward_ios,
+                size: 14,
+                color: AppColors.mainColor,
+              ),
             ],
           ),
         ),

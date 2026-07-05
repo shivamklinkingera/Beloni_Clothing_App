@@ -68,7 +68,7 @@ const OrderHistory: React.FC = (): JSX.Element => {
           <Text
             style={{...theme.fonts.Lato_700Bold, color: theme.colors.mainColor}}
           >
-            ${section.total}
+            ₹{section.total}
           </Text>
         </View>
       </components.Container>
@@ -108,7 +108,7 @@ const OrderHistory: React.FC = (): JSX.Element => {
                 style={{
                   color: theme.colors.textColor,
                 }}
-              >{`${product.quantity} x $${product.price}`}</text.T14>
+              >{`${product.quantity} x ₹${product.price.toFixed(2)}`}</text.T14>
             </View>
           );
         })}

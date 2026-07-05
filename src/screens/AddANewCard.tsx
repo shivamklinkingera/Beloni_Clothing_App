@@ -59,7 +59,7 @@ const AddANewCard: React.FC = (): JSX.Element => {
             }}
           />
           <components.InputField
-            placeholder='Kristin Watson'
+            placeholder='Manish Kumar'
             containerStyle={{
               marginBottom: 10,
             }}

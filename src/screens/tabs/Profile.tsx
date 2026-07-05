@@ -70,14 +70,14 @@ const Profile = () => {
             marginBottom: 4,
           }}
         >
-          Kristin Watson
+          Manish Kumar
         </text.H3>
         <text.T14
           style={{
             textAlign: 'center',
           }}
         >
-          kristinwatson@mail.com
+          manishkumar@mail.com
         </text.T14>
       </View>
     );

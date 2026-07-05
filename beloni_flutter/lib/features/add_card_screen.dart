@@ -31,11 +31,12 @@ class _AddCardScreenState extends State<AddCardScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  padding: const EdgeInsets.symmetric(vertical: 44),
-                  decoration: const BoxDecoration(
-                    color: AppColors.pastel,
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
                   ),
+                  padding: const EdgeInsets.symmetric(vertical: 44),
+                  decoration: const BoxDecoration(color: AppColors.pastel),
                   child: Stack(
                     children: [
                       Positioned.fill(
@@ -59,38 +60,53 @@ class _AddCardScreenState extends State<AddCardScreen> {
                               const SizedBox(height: 30),
                               _inputField(
                                 controller: _nameController,
-                                placeholder: 'Kristin Watson',
-                                validator: (value) => value == null || value.isEmpty ? 'Please enter name' : null,
+                                placeholder: 'Manish Kumar',
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                    ? 'Please enter name'
+                                    : null,
                               ),
                               const SizedBox(height: 10),
                               _inputField(
                                 controller: _numberController,
                                 placeholder: 'xxxx xxxx xxxx xxxx',
                                 keyboardType: TextInputType.number,
-                                validator: (value) => value == null || value.length < 16 ? 'Invalid card number' : null,
+                                validator: (value) =>
+                                    value == null || value.length < 16
+                                    ? 'Invalid card number'
+                                    : null,
                               ),
                               const SizedBox(height: 10),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.4,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
                                     child: _inputField(
                                       controller: _expiryController,
                                       placeholder: '12/23',
                                       keyboardType: TextInputType.datetime,
-                                      validator: (value) => value == null || !value.contains('/') ? 'Invalid expiry' : null,
+                                      validator: (value) =>
+                                          value == null || !value.contains('/')
+                                          ? 'Invalid expiry'
+                                          : null,
                                     ),
                                   ),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.4,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
                                     child: _inputField(
                                       controller: _cvvController,
                                       placeholder: '•••',
                                       obscureText: true,
                                       keyboardType: TextInputType.number,
-                                      validator: (value) => value == null || value.length < 3 ? 'Invalid CVV' : null,
+                                      validator: (value) =>
+                                          value == null || value.length < 3
+                                          ? 'Invalid CVV'
+                                          : null,
                                     ),
                                   ),
                                 ],
@@ -127,9 +143,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
     String? Function(String?)? validator,
   }) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
-      ),
+      decoration: const BoxDecoration(color: AppColors.white),
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
@@ -137,8 +151,13 @@ class _AddCardScreenState extends State<AddCardScreen> {
         validator: validator,
         decoration: InputDecoration(
           hintText: placeholder,
-          hintStyle: AppTypography.t16.copyWith(color: AppColors.textColor.withOpacity(0.5)),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          hintStyle: AppTypography.t16.copyWith(
+            color: AppColors.textColor.withOpacity(0.5),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
           border: InputBorder.none,
           errorStyle: const TextStyle(height: 0),
         ),

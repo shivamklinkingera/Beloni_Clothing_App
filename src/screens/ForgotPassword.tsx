@@ -59,7 +59,7 @@ const ForgotPassword: React.FC = (): JSX.Element => {
             new password via email.
           </text.T16>
           <components.InputField
-            placeholder='kristinwatson@mail.com'
+            placeholder='manishkumar@mail.com'
             onChangeText={(text) => setEmail(text)}
             value={email}
             containerStyle={{

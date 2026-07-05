@@ -43,7 +43,7 @@ const ProductPrice: React.FC<Props> = ({
               lineHeight: 12 * 1.5,
             }}
           >
-            ${item.old_price.toFixed(2)}
+            ₹{item.old_price.toFixed(2)}
           </Text>
         )}
         <Text
@@ -57,7 +57,7 @@ const ProductPrice: React.FC<Props> = ({
           }}
           numberOfLines={numberOfLines}
         >
-          ${item.price.toFixed(2)}
+          ₹{item.price.toFixed(2)}
         </Text>
       </View>
     );
@@ -77,7 +77,7 @@ const ProductPrice: React.FC<Props> = ({
               color: theme.colors.textColor,
             }}
           >
-            ${item.old_price.toFixed(1)}
+            ₹{item.old_price.toFixed(2)}
           </Text>
         )}
         <Text
@@ -85,9 +85,11 @@ const ProductPrice: React.FC<Props> = ({
             ...theme.fonts.Lato_400Regular,
             fontSize: 20,
             lineHeight: 20 * 1.4,
+            color: theme.colors.textColor,
           }}
+          numberOfLines={numberOfLines}
         >
-          ${item.price}
+          ₹{item.price.toFixed(2)}
         </Text>
       </View>
     );

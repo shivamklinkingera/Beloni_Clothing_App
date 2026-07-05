@@ -38,11 +38,12 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  padding: const EdgeInsets.symmetric(vertical: 44),
-                  decoration: const BoxDecoration(
-                    color: AppColors.pastel,
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
                   ),
+                  padding: const EdgeInsets.symmetric(vertical: 44),
+                  decoration: const BoxDecoration(color: AppColors.pastel),
                   child: Stack(
                     children: [
                       Positioned.fill(
@@ -58,7 +59,10 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                           key: _formKey,
                           child: Column(
                             children: [
-                              CustomText.h1('Welcome Back!', textAlign: TextAlign.center),
+                              CustomText.h1(
+                                'Welcome Back!',
+                                textAlign: TextAlign.center,
+                              ),
                               const SizedBox(height: 14),
                               CustomText.t16(
                                 'Use social networks or your email',
@@ -79,11 +83,17 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                               const SizedBox(height: 30),
                               _inputField(
                                 controller: _emailController,
-                                placeholder: 'kristinwatson@mail.com',
-                                suffixIcon: const Icon(Icons.check, size: 18, color: AppColors.mainColor),
+                                placeholder: 'manishkumar@mail.com',
+                                suffixIcon: const Icon(
+                                  Icons.check,
+                                  size: 18,
+                                  color: AppColors.mainColor,
+                                ),
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) return 'Please enter your email';
-                                  if (!value.contains('@')) return 'Please enter a valid email';
+                                  if (value == null || value.isEmpty)
+                                    return 'Please enter your email';
+                                  if (!value.contains('@'))
+                                    return 'Please enter a valid email';
                                   return null;
                                 },
                               ),
@@ -94,15 +104,21 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                                 obscureText: _obscurePassword,
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                                    _obscurePassword
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
                                     size: 18,
                                     color: AppColors.mainColor,
                                   ),
-                                  onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
+                                  onPressed: () => setState(
+                                    () => _obscurePassword = !_obscurePassword,
+                                  ),
                                 ),
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) return 'Please enter your password';
-                                  if (value.length < 6) return 'Password must be at least 6 characters';
+                                  if (value == null || value.isEmpty)
+                                    return 'Please enter your password';
+                                  if (value.length < 6)
+                                    return 'Password must be at least 6 characters';
                                   return null;
                                 },
                               ),
@@ -110,7 +126,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                               Row(
                                 children: [
                                   GestureDetector(
-                                    onTap: () => setState(() => _rememberMe = !_rememberMe),
+                                    onTap: () => setState(
+                                      () => _rememberMe = !_rememberMe,
+                                    ),
                                     child: Row(
                                       children: [
                                         Container(
@@ -118,24 +136,35 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                                           height: 18,
                                           decoration: BoxDecoration(
                                             color: AppColors.white,
-                                            border: Border.all(color: AppColors.pastel),
+                                            border: Border.all(
+                                              color: AppColors.pastel,
+                                            ),
                                           ),
                                           child: _rememberMe
                                               ? Container(
-                                                  margin: const EdgeInsets.all(3),
+                                                  margin: const EdgeInsets.all(
+                                                    3,
+                                                  ),
                                                   color: AppColors.accentColor,
                                                 )
                                               : null,
                                         ),
                                         const SizedBox(width: 10),
-                                        CustomText.t16('Remember me', color: AppColors.textColor),
+                                        CustomText.t16(
+                                          'Remember me',
+                                          color: AppColors.textColor,
+                                        ),
                                       ],
                                     ),
                                   ),
                                   const Spacer(),
                                   GestureDetector(
-                                    onTap: () => context.push('/forgot-password'),
-                                    child: CustomText.t16('Forgot password?', color: AppColors.accentColor),
+                                    onTap: () =>
+                                        context.push('/forgot-password'),
+                                    child: CustomText.t16(
+                                      'Forgot password?',
+                                      color: AppColors.accentColor,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -144,7 +173,12 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                                 title: 'Sign in',
                                 onPress: () {
                                   if (_formKey.currentState!.validate()) {
-                                    ref.read(appStateProvider.notifier).setTokens('accessToken', 'refreshToken');
+                                    ref
+                                        .read(appStateProvider.notifier)
+                                        .setTokens(
+                                          'accessToken',
+                                          'refreshToken',
+                                        );
                                   }
                                 },
                               ),
@@ -153,12 +187,16 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                                 onTap: () => context.push('/signup'),
                                 child: RichText(
                                   text: TextSpan(
-                                    style: AppTypography.t16.copyWith(color: AppColors.textColor),
+                                    style: AppTypography.t16.copyWith(
+                                      color: AppColors.textColor,
+                                    ),
                                     children: [
                                       const TextSpan(text: 'No account? '),
                                       TextSpan(
                                         text: 'Register now.',
-                                        style: TextStyle(color: AppColors.accentColor),
+                                        style: TextStyle(
+                                          color: AppColors.accentColor,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -187,9 +225,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
     String? Function(String?)? validator,
   }) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
-      ),
+      decoration: const BoxDecoration(color: AppColors.white),
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
@@ -197,7 +233,10 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
         decoration: InputDecoration(
           hintText: placeholder,
           hintStyle: TextStyle(color: AppColors.textColor.withOpacity(0.5)),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
           border: InputBorder.none,
           suffixIcon: suffixIcon,
           errorStyle: const TextStyle(height: 0),

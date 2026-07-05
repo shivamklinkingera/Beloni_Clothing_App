@@ -112,7 +112,7 @@ const SignIn: React.FC = (): JSX.Element => {
             />
           </View>
           <components.InputField
-            placeholder='kristinwatson@mail.com'
+            placeholder='manishkumar@mail.com'
             onChangeText={(text) => setEmail(text)}
             value={email}
             checkIcon={true}

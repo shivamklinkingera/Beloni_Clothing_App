@@ -32,11 +32,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  padding: const EdgeInsets.only(top: 30, bottom: 50),
-                  decoration: const BoxDecoration(
-                    color: AppColors.pastel,
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
                   ),
+                  padding: const EdgeInsets.only(top: 30, bottom: 50),
+                  decoration: const BoxDecoration(color: AppColors.pastel),
                   child: Stack(
                     children: [
                       Positioned(
@@ -61,10 +62,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               const SizedBox(height: 30),
                               _inputField(
                                 controller: _emailController,
-                                placeholder: 'kristinwatson@mail.com',
+                                placeholder: 'manishkumar@mail.com',
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) return 'Please enter your email';
-                                  if (!value.contains('@')) return 'Please enter a valid email';
+                                  if (value == null || value.isEmpty)
+                                    return 'Please enter your email';
+                                  if (!value.contains('@'))
+                                    return 'Please enter a valid email';
                                   return null;
                                 },
                               ),
@@ -77,7 +80,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   }
                                 },
                               ),
-                              const SizedBox(height: 200), // Ensure space for background image
+                              const SizedBox(
+                                height: 200,
+                              ), // Ensure space for background image
                             ],
                           ),
                         ),
@@ -99,16 +104,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     String? Function(String?)? validator,
   }) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
-      ),
+      decoration: const BoxDecoration(color: AppColors.white),
       child: TextFormField(
         controller: controller,
         validator: validator,
         decoration: InputDecoration(
           hintText: placeholder,
-          hintStyle: AppTypography.t16.copyWith(color: AppColors.textColor.withOpacity(0.5)),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          hintStyle: AppTypography.t16.copyWith(
+            color: AppColors.textColor.withOpacity(0.5),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
           border: InputBorder.none,
           errorStyle: const TextStyle(height: 0),
         ),

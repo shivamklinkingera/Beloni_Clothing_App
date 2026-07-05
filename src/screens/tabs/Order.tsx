@@ -109,7 +109,7 @@ const Order = () => {
           }}
         >
           <text.T14>Subtotal</text.T14>
-          <text.T14>${subtotal}</text.T14>
+          <text.T14>₹{subtotal}</text.T14>
         </View>
         <View
           style={{
@@ -147,7 +147,7 @@ const Order = () => {
           }}
         >
           <Text>Total</Text>
-          <Text>${subtotal}</Text>
+          <Text>₹{subtotal}</Text>
         </View>
       </components.Container>
     );

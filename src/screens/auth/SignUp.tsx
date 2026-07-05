@@ -108,7 +108,7 @@ const SignUp: React.FC = (): JSX.Element => {
             />
           </View>
           <components.InputField
-            placeholder='Kristin Watson'
+            placeholder='Manish Kumar'
             onChangeText={(text) => setUserName(text)}
             value={username}
             containerStyle={{

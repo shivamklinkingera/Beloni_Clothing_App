@@ -14,9 +14,15 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController(text: 'Kristin Watson');
-  final TextEditingController _emailController = TextEditingController(text: 'kristinwatson@mail.com');
-  final TextEditingController _phoneController = TextEditingController(text: '+17 123456789');
+  final TextEditingController _nameController = TextEditingController(
+    text: 'Manish Kumar',
+  );
+  final TextEditingController _emailController = TextEditingController(
+    text: 'manishkumar@mail.com',
+  );
+  final TextEditingController _phoneController = TextEditingController(
+    text: '+17 123456789',
+  );
   final TextEditingController _addressController = TextEditingController();
 
   @override
@@ -33,11 +39,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  padding: const EdgeInsets.symmetric(vertical: 44),
-                  decoration: const BoxDecoration(
-                    color: AppColors.pastel,
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
                   ),
+                  padding: const EdgeInsets.symmetric(vertical: 44),
+                  decoration: const BoxDecoration(color: AppColors.pastel),
                   child: Stack(
                     children: [
                       Positioned.fill(
@@ -58,15 +65,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               _inputField(
                                 controller: _nameController,
                                 placeholder: 'Full Name',
-                                validator: (value) => value == null || value.isEmpty ? 'Name cannot be empty' : null,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                    ? 'Name cannot be empty'
+                                    : null,
                               ),
                               const SizedBox(height: 10),
                               _inputField(
                                 controller: _emailController,
                                 placeholder: 'Email',
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) return 'Email cannot be empty';
-                                  if (!value.contains('@')) return 'Invalid email';
+                                  if (value == null || value.isEmpty)
+                                    return 'Email cannot be empty';
+                                  if (!value.contains('@'))
+                                    return 'Invalid email';
                                   return null;
                                 },
                               ),
@@ -74,13 +86,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               _inputField(
                                 controller: _phoneController,
                                 placeholder: 'Phone',
-                                validator: (value) => value == null || value.isEmpty ? 'Phone cannot be empty' : null,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                    ? 'Phone cannot be empty'
+                                    : null,
                               ),
                               const SizedBox(height: 10),
                               _inputField(
                                 controller: _addressController,
                                 placeholder: 'Enter your address',
-                                validator: (value) => value == null || value.isEmpty ? 'Address cannot be empty' : null,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                    ? 'Address cannot be empty'
+                                    : null,
                               ),
                               const SizedBox(height: 20),
                               PrimaryButton(
@@ -116,7 +134,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             shape: BoxShape.circle,
             border: Border.all(color: AppColors.accentColor, width: 6),
             image: const DecorationImage(
-              image: NetworkImage('https://george-fx.github.io/beloni/avatar/01.jpg'),
+              image: NetworkImage(
+                'https://george-fx.github.io/beloni/avatar/01.jpg',
+              ),
               fit: BoxFit.cover,
             ),
           ),
@@ -130,7 +150,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               color: AppColors.white,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.camera_alt_outlined, size: 20, color: AppColors.mainColor),
+            child: const Icon(
+              Icons.camera_alt_outlined,
+              size: 20,
+              color: AppColors.mainColor,
+            ),
           ),
         ),
       ],
@@ -143,16 +167,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     String? Function(String?)? validator,
   }) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
-      ),
+      decoration: const BoxDecoration(color: AppColors.white),
       child: TextFormField(
         controller: controller,
         validator: validator,
         decoration: InputDecoration(
           hintText: placeholder,
           hintStyle: const TextStyle(color: Color(0x80666666)),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
           border: InputBorder.none,
           errorStyle: const TextStyle(height: 0),
         ),
